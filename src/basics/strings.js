@@ -7,5 +7,18 @@
  * @return {string} true if n is bigger than 2
  */
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
-  //
+  if (typeof needle !== 'String' || typeof haystack !== 'String' || typeof newWord !== 'String') {
+      throw new Error("unsupported types");
+  }
+
+
+    const regex = new RegExp(needle, 'gi');
+
+
+
+
 }
+
+
+
+

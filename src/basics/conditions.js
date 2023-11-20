@@ -1,11 +1,11 @@
 /**
- * JavaScript is different from Rust or Java, the typing system is fully dynamic.
- * This mean 2 important things :
- * - You cannon precise variables types, function parameters types and return
- *   types, so there are no guaranties that the type you expect would be provided
- * - JavaScript engine will try to match types dynamically, so you can do things like
- *   comparing numbers and string, but internally JS always do type conversion, this
- *   can lead to unexpected behaviors
+ * JavaScript est différent de Rust ou Java, le système de typage est entièrement dynamique.
+ * Cela signifie deux choses importantes :
+ * - Vous ne pouvez pas préciser les types de variables, les types de paramètres de fonctions et les types de retour,
+ *, il n'y a donc aucune garantie que le type que vous attendez soit fourni.
+ * Le moteur JavaScript essaiera de faire correspondre les types dynamiquement, vous pouvez donc faire des choses comme
+ *  comparer des nombres et des chaînes de caractères, mais en interne, JS fait toujours une conversion de type, ce qui
+ * peut conduire à des comportements inattendus
  */
 
 /**
@@ -13,7 +13,10 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
-  //
+  if (isNaN(n)) {
+    throw "wrong input"
+  }
+  return n > 2;
 }
 
 /**
@@ -22,5 +25,12 @@ export function isBiggerThan2(n) {
  * @return {boolean} true if m is a multiple of n
  */
 export function isMult(n, m) {
-  //
+  if (typeof n !== 'number' || typeof m !== 'number' || isNaN(n) || isNaN(m)) {
+    throw new Error("Unsupported types");
+  }
+
+  return n % m === 0;
 }
+
+
+
