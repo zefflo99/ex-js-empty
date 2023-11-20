@@ -1,4 +1,4 @@
-import {match} from "assert";
+
 
 
 /**
@@ -20,7 +20,17 @@ export function findAndReplacePreservingCase(needle, haystack, newWord) {
       const needleleter = match.split('')
       let newWordUp = '';
 
-
+      for (let i = 0; i < needleleter.length; i++) {
+          if (i >= newWord.length) {
+              return newWordUp
+          }
+          else if (needleleter[i] === needleleter[i].toUpperCase()) {
+              newWordUp += newWord[i].toUpperCase()
+          } else {
+              newWordUp += newWord[i].toLowerCase()
+          }
+      }
+      return newWordUp
   });
 
 }
