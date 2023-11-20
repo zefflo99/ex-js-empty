@@ -4,6 +4,13 @@
  */
 export function computeSphereVolume(diameter) {
 
+    if (isNaN(diameter)) {
+        throw new Error('this param')
+    }
+
+    let ray = diameter /2
+    return 4 / 3 * Math.PI * Math.pow(ray, 3);
+
 }
 
 /**
@@ -11,7 +18,9 @@ export function computeSphereVolume(diameter) {
  * @return {number} number rounded to one decimal
  */
 export function roundNumberToOneDecimals(n) {
-  //
+
+
+
 }
 
 /**
