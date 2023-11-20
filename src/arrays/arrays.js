@@ -23,7 +23,9 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
-  //
+  const concatArray = array1.concat(array2);
+
+  return concatArray;
 }
 
 /**
