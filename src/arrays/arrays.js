@@ -1,19 +1,22 @@
+
+
 /**
  * @param {array<string>} array An array containing words and sentences
  * @return {array<string>} An array with all words isolated, and with empty strings removed
  */
-export function splitAllStringsByWordAndFilterEmptyOnes(array) {
-  let newArray = [];
-  for (let i = 0; 1 < array.length; i++) {
-      let splitArray = array[i].split(' ');
 
-      for (let k = 0; k < splitArray.length; k++) {
-          if (splitArray[k] !== ''){
-              newArray.push(splitArray[k]);
-          }
-      }
-  }
-  return newArray;
+export function splitAllStringsByWordAndFilterEmptyOnes(array) {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        let splitArray = array[i].split(' ');
+
+        for (let j = 0; j < splitArray.length; j++) {
+            if (splitArray[j] !== '') {
+                newArray.push(splitArray[j]);
+            }
+        }
+    }
+    return newArray;
 }
 
 /**
@@ -23,9 +26,10 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
-  const concatArray = array1.concat(array2);
+    //
+    const concatArray = array1.concat(array2);
 
-  return concatArray;
+    return concatArray
 }
 
 /**
@@ -35,8 +39,8 @@ export function concatenateArrays(array1, array2) {
  * @return {array<*>} A new array, sorted, **the original array should not be modified**
  */
 export function replaceElementsInArrayAtAGivenPlace(array, index, ...newElements) {
-
-  let newArray = [...array]
+    //
+    let newArray = [...array]
     newArray.splice(index, newElements.length, newElements)
     return newArray.flat()
 }
