@@ -4,7 +4,17 @@
  * You need to display coordinates as follows : "x: 232, y: 332
  */
 export function mouseMovements() {
-  //
+
+let screenLog = document.querySelector("#mouse-coordinates");
+document.addEventListener("mousemove", function (event){
+
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    screenLog.textContent = "x: " + mouseX + ", y: " + mouseY;
+});
+
+
 }
 
 /**
